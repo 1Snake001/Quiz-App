@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/bootstrap.scss";
+body {
+  background-color: rgb(236, 240, 241);
+}
+.App {
+  text-align: center;
+}
+
+.answer {
+  cursor: pointer;
+}
+.disabled-answer {
+  cursor: "not-allowed";
+  pointer-events: none;
+}
+.disabled-link{
+  cursor: "not-allowed";
+  pointer-events: none;
+}
+
+.container {
+  margin-top: 30px;
+}
+.secondary-container {
+  background-color: white;
+  padding: 40px 35px;
+  display: block;
+  margin: auto;
+  width: 70%;
+  height: 60%;
+  margin-top: 30px;
+}
+.btn{
+  display: block;
+  margin:20px auto;
+}
+.score{
+  text-align: center;
+}
+
+form{
+  margin-bottom: 30px;
+}
+
+input{
+  margin-bottom: 20px;
+}
+
+.inputs,.form-control{
+  display: inline;
+/*  display: flex;
+ justify-content: space-around; */
+}
+
+.validation{
+  position: relative;
+  text-align: center;
+  color: red;
+}
