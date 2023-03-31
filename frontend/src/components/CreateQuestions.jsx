@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect as _useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import qustionServices from "../services/Services";
 import Input from "./Input";
 import Radio from "./Radio";
 
-const CreateQuestions = ({ questions, getAllQuestions }) => {
-  useEffect(() => {
+const CreateQuestions = ({ questions, getAllQuestions}) => {
+
+  _useEffect(() => {
     getAllQuestions();
   }, []);
 
@@ -31,7 +32,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
   });
 
   const [selectedValue, setSelectedValue] = useState("");
-  useEffect(() => {
+  _useEffect(() => {
     setcheckedChekboxes({
       firstAnswer: checkbox1.current.checked,
       secondAnswer: checkbox2.current.checked,
@@ -45,7 +46,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
   await  getAllQuestions();
   };
 
-  function handleQuestionAttraction() {
+  function handleQuestion() {
     navigate(`/`);
   }
 
@@ -76,7 +77,6 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
   const [isEveryInputsValid, setIsEveryInputValid] = useState(true);
 
   async function  resetValues() {
-
     setFieldValues({
       question: "",
       firstAnswer: "",
@@ -84,20 +84,17 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
       thirdAnswer: "",
       fourthAnswer: "",
     });
-
     setSelectedValue("");
-
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(checkValidator());
-    console.log(inputValidator());
+  
     let isValidInputs = inputValidator();
     let isValidCheckBoxes = checkValidator();
 
     if (isValidInputs && isValidCheckBoxes) {
-      console.log("a mezők kitöltve");
+
       setIsEveryInputValid(true);
     
       await qustionServices.addQuestion( {
@@ -125,7 +122,6 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
       await resetValues();
     } else {
       setIsEveryInputValid(false);
-      console.log("a mezők üresek");
     }
   };
 
@@ -152,7 +148,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
       <div>
         <button
           type="button"
-          onClick={handleQuestionAttraction}
+          onClick={handleQuestion}
           className="btn text-primary"
         >
           Vissza a játékhoz
@@ -171,9 +167,9 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.firstAnswer}
             labelText="#1"
-            placeholder="Ide írd a választ"
+            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
             name="firstAnswer"
-            className="form-control"
+            className="form-control input"
           />
           <Radio
             name="option"
@@ -181,7 +177,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             checked={selectedValue === "option1"}
             labelText="Option 1"
             onChange={handleRadioChange}
-            className="input"
+            className="radio"
             Ref={checkbox1}
           />
         </div>
@@ -190,9 +186,9 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.secondAnswer}
             labelText="#2"
-            placeholder="Ide írd a választ"
+            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
             name="secondAnswer"
-            className="form-control"
+            className="form-control input"
           />
           <Radio
             name="option"
@@ -200,7 +196,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             checked={selectedValue === "option2"}
             labelText="Option 2"
             onChange={handleRadioChange}
-            className="input"
+            className="radio"
             Ref={checkbox2}
           />
         </div>
@@ -209,9 +205,9 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.thirdAnswer}
             labelText="#3"
-            placeholder="Ide írd a választ"
+            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
             name="thirdAnswer"
-            className="form-control"
+            className="form-control input"
           />
           <Radio
             name="option"
@@ -219,7 +215,7 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             checked={selectedValue === "option3"}
             labelText="Option 3"
             onChange={handleRadioChange}
-            className="input"
+            className="radio"
             Ref={checkbox3}
           />
         </div>
@@ -228,9 +224,9 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.fourthAnswer}
             labelText="#4"
-            placeholder="Ide írd a választ"
+            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
             name="fourthAnswer"
-            className="form-control"
+            className="form-control input"
           />
           <Radio
             name="option"
@@ -238,15 +234,15 @@ const CreateQuestions = ({ questions, getAllQuestions }) => {
             checked={selectedValue === "option4"}
             labelText="Option 4"
             onChange={handleRadioChange}
-            className="input"
+            className="radio"
             Ref={checkbox4}
           />
+        </div>
           {!isEveryInputsValid && (
             <div>
-              <h2 className="validation">Összes mező kitöltése kötelező!!!</h2>
+              <span className="validation">Összes mező kitöltése kötelező!!!</span>
             </div>
           )}
-        </div>
         <button type="submit" className="btn btn-primary">
           Küldés
         </button>

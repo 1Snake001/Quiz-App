@@ -13,9 +13,10 @@ body {
   cursor: "not-allowed";
   pointer-events: none;
 }
-.disabled-link{
+.disabled-link {
   cursor: "not-allowed";
   pointer-events: none;
+  opacity: 0.5;
 }
 
 .container {
@@ -30,30 +31,52 @@ body {
   height: 60%;
   margin-top: 30px;
 }
-.btn{
+.btn {
   display: block;
-  margin:20px auto;
+  margin: 20px auto;
 }
-.score{
+.score,.questions-lenght {
   text-align: center;
 }
 
-form{
+form {
   margin-bottom: 30px;
 }
 
-input{
+input {
   margin-bottom: 20px;
 }
 
-.inputs,.form-control{
-  display: inline;
-/*  display: flex;
- justify-content: space-around; */
+.inputs {
+  display: flex;
+  flex: 2;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.validation{
+.input {
+  width: 80vw;
+}
+
+.validation {
+  display: block;
+  margin: auto;
   position: relative;
+  color: red;
+}
+
+span {
+  margin: auto;
   text-align: center;
   color: red;
+}
+
+.radio {
+  margin: 15px 0 0 20px;
+}
+
+.final-score{
+  text-align: center;
 }
