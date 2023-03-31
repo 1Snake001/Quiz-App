@@ -44,7 +44,7 @@ const Questions = ({
       </div>
       <div className="questions-number">
         {questions.length !== 0 ? (
-          <h3 className="questions-lenght">{questions.length} Kérdés maradt hátra!</h3>
+          <h3 className="question-lenght">{questions.length} Kérdés maradt hátra!</h3>
         ) : null}
       </div>
       <div className="secondary-container">
