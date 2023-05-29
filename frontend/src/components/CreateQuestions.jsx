@@ -186,7 +186,7 @@ const CreateQuestions = ({ questions, getAllQuestions}) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.secondAnswer}
             labelText="#2"
-            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
+            placeholder="Ide írja a választ, majd válassza ki a helyes lehetőséget!"
             name="secondAnswer"
             className="form-control input"
           />
