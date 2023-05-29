@@ -9,10 +9,12 @@ body {
 .answer {
   cursor: pointer;
 }
+
 .disabled-answer {
   cursor: "not-allowed";
   pointer-events: none;
 }
+
 .disabled-link {
   cursor: "not-allowed";
   pointer-events: none;
@@ -22,6 +24,7 @@ body {
 .container {
   margin-top: 30px;
 }
+
 .secondary-container {
   background-color: white;
   padding: 40px 35px;
@@ -35,7 +38,7 @@ body {
   display: block;
   margin: 20px auto;
 }
-.score,.questions-lenght {
+.score,.question-lenght {
   text-align: center;
 }
 

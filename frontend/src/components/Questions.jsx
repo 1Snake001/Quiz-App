@@ -35,6 +35,7 @@ const Questions = ({
 
   function handleQuestionAttraction() {
     navigate(`/questions`);
+    setPoints(0);
   }
 
   return (

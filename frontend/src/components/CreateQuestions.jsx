@@ -158,7 +158,7 @@ const CreateQuestions = ({ questions, getAllQuestions}) => {
         <Input
           onChange={onchangeHandler}
           fieldValue={fieldValues.question}
-          placeholder="Ide írd a kérdést"
+          placeholder="Ide írja a kérdést!"
           name="question"
           className="form-control"
         />
@@ -167,7 +167,7 @@ const CreateQuestions = ({ questions, getAllQuestions}) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.firstAnswer}
             labelText="#1"
-            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
+            placeholder="Ide írja a választ, majd válassza ki a helyes lehetőséget!"
             name="firstAnswer"
             className="form-control input"
           />
@@ -205,7 +205,7 @@ const CreateQuestions = ({ questions, getAllQuestions}) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.thirdAnswer}
             labelText="#3"
-            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
+            placeholder="Ide írja a választ, majd válassza ki a helyes lehetőséget!"
             name="thirdAnswer"
             className="form-control input"
           />
@@ -224,7 +224,7 @@ const CreateQuestions = ({ questions, getAllQuestions}) => {
             onChange={onchangeHandler}
             fieldValue={fieldValues.fourthAnswer}
             labelText="#4"
-            placeholder="Ide írd a választ, majd válaszd ki a helyes lehetőséget"
+            placeholder="Ide írja a választ, majd válassza ki a helyes lehetőséget!"
             name="fourthAnswer"
             className="form-control input"
           />
